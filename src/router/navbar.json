@@ -1,4 +1,20 @@
 [
+  { 
+    "title": "Front-end Basics",
+    "children": [
+      { "name": "Css 常用样式", "url": "css" },
+      { "name": "Css Animation 常用动画", "url": "css-animation" }
+    ]
+  },
+  {
+    "title": "Records",
+    "children": [
+      { "name": "Git", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/git", "github": true },
+      { "name": "Ruankao", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/ruankao", "github": true },
+      { "name": "Jiaozi", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/jiaozi", "github": true },
+      { "name": "Tips", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/tips.md", "github": true }
+    ]
+  },
   {
     "title": "Markdown 扩展",
     "url": "readme"

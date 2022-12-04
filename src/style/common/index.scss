@@ -4,3 +4,15 @@ a {
     text-decoration: none !important;
   }
 }
+
+.demo-flex {
+  display: flex;
+}
+.demo-btn {
+  margin-left: 40PX;
+  height: 28PX;
+  cursor: pointer;
+  padding-left: 12PX;
+  padding-right: 12PX;
+  box-sizing: border-box;
+}

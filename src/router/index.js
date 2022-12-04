@@ -14,10 +14,10 @@ const formatRouter = () => {
   Navbar.forEach(item => {
     if (item.children) {
       item.children.forEach(child => {
-        router.push(setData(child))
+        !child.github && router.push(setData(child))
       })
     } else {
-      router.push(setData(item))
+      !item.github && router.push(setData(item))
     }
   })
   return router

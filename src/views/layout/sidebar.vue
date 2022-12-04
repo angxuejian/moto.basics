@@ -7,15 +7,18 @@
 
           <template v-if="item.children">
             <p class="sidebar-item__title">{{ item.title }}</p>
-            <router-link v-for="(s, i) in item.children" :key="i" :to="pathUrl(s.url)">
-              <span :class="['sidebar-item__link', { 'sidebar-item__selected': sidebarIndex === pathUrl(s.url) }]">{{ s.name }}</span>
-            </router-link>
+
+            <template v-for="(s, i) in item.children" :key="i">
+              <router-href :to="pathUrl(s.url)" :item="s">
+                <span :class="['sidebar-item__link', { 'sidebar-item__selected': sidebarIndex === pathUrl(s.url) }]">{{ s.name }}</span>
+              </router-href>
+            </template>
           </template>
 
           <template v-else>
-            <router-link :to="pathUrl(item.url)">
+            <router-href :to="pathUrl(item.url)" :item="item">
               <span :class="['sidebar-item__title', { 'sidebar-item__title-selected': sidebarIndex === pathUrl(item.url) }]">{{ item.title }}</span>
-            </router-link>
+            </router-href>
           </template>
         </div>
       </mo-scrollbar>
@@ -28,9 +31,10 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import Navbar from '@/router/navbar.json'
+import routerHref from './router-href.vue'
 const setting = require('@/setting')
 export default {
-  
+  components: { routerHref },
   setup() {
     const pathUrl = url => `/${setting.path}/${url}`
 
@@ -45,12 +49,8 @@ export default {
     onMounted(() => { store.dispatch('ADD_LISTENER', handleResize) })
     onUnmounted(() => store.dispatch('DEL_LISTENER', handleResize))
     
-    const routerlink = item => {
-      if (item.children) return
-      router.push({ path: pathUrl(item.url) })
-    }
 
-    return { sidebarArr, sidebarIndex, hasSide, pathUrl, close, routerlink }
+    return { sidebarArr, sidebarIndex, hasSide, pathUrl, close }
   },
 }
 </script>
