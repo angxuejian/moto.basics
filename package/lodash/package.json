@@ -1,0 +1,21 @@
+{
+  "name": "@angxuejian/lodash",
+  "version": "1.0.1",
+  "description": "JavaScript 实用工具库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angxuejian/moto.basics/tree/main/package"
+  },
+  "keywords": [
+    "lodash",
+    "js",
+    "javascript",
+    "utils"
+  ],
+  "author": "angxuejian",
+  "license": "ISC"
+}
