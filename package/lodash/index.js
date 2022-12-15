@@ -10,6 +10,7 @@ const _rgbToHsv = require('./lib/rgbToHsv')
 const _hexToRgb = require('./lib/hexToRgb')
 const _rgbToHex = require('./lib/rgbToHex')
 const _ImageMode = require('./lib/imageMode')
+const _Calendar = require('./lib/calendar')
 
 module.exports = {
   _isTypeOf,
@@ -23,6 +24,7 @@ module.exports = {
   _rgbToHsv,
   _hexToRgb,
   _rgbToHex,
-  _ImageMode
+  _ImageMode,
+  _Calendar
 }
 
