@@ -5,10 +5,11 @@ const setting = require('@/setting')
 const formatRouter = () => {
   const router = []
   const setData = (item) => {
+    const url = item.path || item.name 
     return {
-      path: `/${setting.path}/${item.url}`,
-      name: item.url[0].toUpperCase() + item.url.substr(1),
-      component: () => import('@/views/examples/docs/' + item.url + '.md'),
+      path: `/${setting.path}/${url}`,
+      name: item.name[0].toUpperCase() + item.name.substr(1),
+      component: () => import('@/views/examples/docs/' + (url) + '.md'),
     }
   }
   Navbar.forEach(item => {

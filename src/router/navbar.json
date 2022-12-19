@@ -2,21 +2,28 @@
   { 
     "title": "Front-end Basics",
     "children": [
-      { "name": "Css 常用样式", "url": "css" },
-      { "name": "Css Animation 常用动画", "url": "css-animation" }
+      { "title": "Css 常用样式", "name": "css" },
+      { "title": "Css Animation 常用动画", "name": "css-animation" }
+    ]
+  },
+  {
+    "title": "Lodash",
+    "children": [
+      { "title": "安装/使用", "name": "use", "path": "lodash/use" },
+      { "title": "_isTypeOf", "name": "isTypeOf", "path": "lodash/isTypeOf" }
     ]
   },
   {
     "title": "Records",
     "children": [
-      { "name": "Git", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/git", "github": true },
-      { "name": "Ruankao", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/ruankao", "github": true },
-      { "name": "Jiaozi", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/jiaozi", "github": true },
-      { "name": "Tips", "url": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/tips.md", "github": true }
+      { "title": "Git", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/git", "github": true },
+      { "title": "Ruankao", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/ruankao", "github": true },
+      { "title": "Jiaozi", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/jiaozi", "github": true },
+      { "title": "Tips", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/tips.md", "github": true }
     ]
   },
   {
     "title": "Markdown 扩展",
-    "url": "readme"
+    "name": "readme"
   }
 ]

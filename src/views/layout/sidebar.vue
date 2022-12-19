@@ -9,15 +9,15 @@
             <p class="sidebar-item__title">{{ item.title }}</p>
 
             <template v-for="(s, i) in item.children" :key="i">
-              <router-href :to="pathUrl(s.url)" :item="s">
-                <span :class="['sidebar-item__link', { 'sidebar-item__selected': sidebarIndex === pathUrl(s.url) }]">{{ s.name }}</span>
+              <router-href :to="pathUrl(s)" :item="s">
+                <span :class="['sidebar-item__link', { 'sidebar-item__selected': sidebarIndex === pathUrl(s) }]">{{ s.title }}</span>
               </router-href>
             </template>
           </template>
 
           <template v-else>
-            <router-href :to="pathUrl(item.url)" :item="item">
-              <span :class="['sidebar-item__title', { 'sidebar-item__title-selected': sidebarIndex === pathUrl(item.url) }]">{{ item.title }}</span>
+            <router-href :to="pathUrl(item)" :item="item">
+              <span :class="['sidebar-item__title', { 'sidebar-item__title-selected': sidebarIndex === pathUrl(item) }]">{{ item.title }}</span>
             </router-href>
           </template>
         </div>
@@ -36,7 +36,7 @@ const setting = require('@/setting')
 export default {
   components: { routerHref },
   setup() {
-    const pathUrl = url => `/${setting.path}/${url}`
+    const pathUrl = item => `/${setting.path}/${(item.path || item.name)}`
 
     const router = useRouter()
     const store = useStore()
