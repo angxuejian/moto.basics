@@ -16,10 +16,10 @@
   {
     "title": "Records",
     "children": [
-      { "title": "Git", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/git", "github": true },
-      { "title": "Ruankao", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/ruankao", "github": true },
-      { "title": "Jiaozi", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/jiaozi", "github": true },
-      { "title": "Tips", "name": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/tips.md", "github": true }
+      { "title": "Git", "path": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/git", "link": true },
+      { "title": "Ruankao", "path": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/ruankao", "link": true },
+      { "title": "Jiaozi", "path": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/jiaozi", "link": true },
+      { "title": "Tips", "path": "https://github.com/angxuejian/moto.basics/tree/main/src/views/examples/github/tips.md", "link": true }
     ]
   },
   {

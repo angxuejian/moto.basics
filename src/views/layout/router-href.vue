@@ -1,8 +1,8 @@
 <template>
-  <router-link v-if="!item.github" :to="to">
+  <router-link v-if="!item.link" :to="to">
     <slot></slot>
   </router-link>
-  <a v-else target="_blank" :href="item.url">
+  <a v-else target="_blank" :href="item.path">
     <slot></slot>
   </a>
 </template>
