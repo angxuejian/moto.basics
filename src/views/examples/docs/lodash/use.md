@@ -33,4 +33,4 @@ const _isTypeOf = require('@angxuejian/lodash/isTypeOf')
 
 function | desc
 ---  | ---  
-_isTypeOf | 判断类型是否一致
+[_isTypeOf](#/docs/lodash/isTypeOf) | 判断类型是否一致

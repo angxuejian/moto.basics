@@ -1,6 +1,6 @@
 {
   "name": "@angxuejian/lodash",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript 实用工具库",
   "main": "index.js",
   "scripts": {
