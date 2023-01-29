@@ -6,7 +6,7 @@ function isNaNIssue(v1, v2) {
 }
 
 /**
- * rgb转rgb
+ * rgb转hsv
  * @param {number} r red 0 - 255
  * @param {number} g green 0 - 255
  * @param {number} b blue 0 - 255

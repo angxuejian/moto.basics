@@ -4,7 +4,7 @@
   "description": "JavaScript 实用工具库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
     "utils"
   ],
   "author": "angxuejian",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.0"
+  }
 }

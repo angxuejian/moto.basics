@@ -15,7 +15,7 @@ class _ImageMode {
   }
 
   // aspectFit
-  getAsoectFit() {
+  getAspectFit() {
     const { width, height, styleH, styleW  } = this
     const scale = width / height // 图片宽高比例
     
@@ -79,7 +79,7 @@ class _ImageMode {
 
 
   // heightFix
-  getWidthFix() {
+  getHeightFix() {
     const { width, height, styleH, styleW  } = this
 
     let [w, s] = []

@@ -29,7 +29,7 @@ const routes = [
   {
     path: '/',
     redirect: children[0].path,
-    component: () => import('@/views/layout'),
+    component: () => import('@/layout'),
     children: children,
   },
 ];
