@@ -5,8 +5,8 @@
  * @param {string} url 要解析的url地址
  * @returns {string} url中key对应的value值
  */
-function _getParams(key, url) {
-  if (!url) {
+function _getParams(key, url = '') {
+  if (!url && typeof window !== 'undefined') {
     url = window && window.location && window.location.href || ''
   }
 

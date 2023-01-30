@@ -6,7 +6,6 @@
  * @returns {boolean}
  */
 function _isTypeOf(value, type) {
-  if (!value || !type || typeof type !== 'string') return;
 
   const list = type.split('')
   list.splice(0, 1, list[0].toUpperCase())

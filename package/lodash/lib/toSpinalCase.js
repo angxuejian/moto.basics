@@ -9,13 +9,14 @@ function _toSpinalCase(str) {
 
   const list = str.split('')
 
-  const val = list.map(item => {
+  const caseArr = list.map(item => {
     if (item.toUpperCase() === item) return '-' + item.toLowerCase()
     else return item
   })
-  if (val[0] === '-') val.splice(0, 1)
 
-  return val.join('')
+  let val = caseArr.join('')
+  if (val[0] === '-') val = val.substring(1)
+  return val
 }
 
 

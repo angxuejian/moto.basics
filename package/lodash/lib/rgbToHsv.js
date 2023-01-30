@@ -14,7 +14,7 @@ function isNaNIssue(v1, v2) {
  */
 function _rgbToHsv(r, g, b) {
 
-  const [red, green, blue] = [r, g, b].map(n / 255)
+  const [red, green, blue] = [r, g, b].map(n => n / 255)
 
   let h = 0
   let s = 0
@@ -24,22 +24,26 @@ function _rgbToHsv(r, g, b) {
   const min = Math.min(red, green, blue)
   const l = max - min
 
-  v = max
-  s = l / max
+ 
+  // + (g < b ? 6 : 0)
   const list = {
-    [red]: isNaNIssue((green - blue), l) + (g < b ? 6 : 0),
+    [red]: isNaNIssue((green - blue), l) % 6,
     [green]: 2 + isNaNIssue((blue - red), l),
     [blue]:  4 + isNaNIssue((red - green), l),
   }
-
-  h = list[max] / 6
+  // if (red === max)
+  console.log(red, green, blue, max, '-11-')
+  h = list[max] * 60
   if (h < 0) h + 360
+  s = l / max
+  v = max
 
   const hsv = {
-    h: Math.round(h * 360),
+    h,
     s: Math.round(s * 100),
     v: Math.round(v * 100)
   }
+  // const hsv = { h, s, v }
 
   return hsv
 }

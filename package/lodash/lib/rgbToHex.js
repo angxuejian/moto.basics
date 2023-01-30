@@ -1,5 +1,5 @@
 
-function toHex(str) {
+function toHex(s) {
   // 将 0-255 转为 [0-9a-fA-F]
   let str = s.toString(16)
   return str.padStart(2, '0').toUpperCase()
