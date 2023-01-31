@@ -26,10 +26,9 @@ function _hsvToRgb(h, s, v) {
     [v, p, q]
   ]
 
-  // list[i % 6] 取出值范围均为 [0-1, 0-1, 0-1] 
   // 依次 n*255 后 转为rgb 0-255 的范围 [0-255, 0-255, 0-255]
   const rgb = list[i % 6].map(n => Math.round(n * 255))
   return `rgb(${rgb.join()})`
 }
-
 module.exports = _hsvToRgb
+// 转换公式： https://www.rapidtables.org/zh-CN/convert/color/hsv-to-rgb.html

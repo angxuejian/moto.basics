@@ -25,27 +25,23 @@ function _rgbToHsv(r, g, b) {
   const l = max - min
 
  
-  // + (g < b ? 6 : 0)
-  const list = {
-    [red]: isNaNIssue((green - blue), l) % 6,
-    [green]: 2 + isNaNIssue((blue - red), l),
-    [blue]:  4 + isNaNIssue((red - green), l),
-  }
-  // if (red === max)
-  console.log(red, green, blue, max, '-11-')
-  h = list[max] * 60
-  if (h < 0) h + 360
+  if (l === 0) h = 0
+  else if (max === red) h = 60 * (isNaNIssue((green - blue), l) % 6)
+  else if (max === green) h = 60 * (isNaNIssue((blue - red), l) + 2)
+  else if (max === blue) h = 60 * (isNaNIssue((red - green), l) + 4)
+
+  if (h < 0) h += 360
   s = l / max
   v = max
 
-  const hsv = {
-    h,
-    s: Math.round(s * 100),
-    v: Math.round(v * 100)
-  }
-  // const hsv = { h, s, v }
 
+  const hsv = {
+    h: Math.round(h),
+    s: Number((s * 100).toFixed(1)),
+    v: Number((v * 100).toFixed(1))
+  }
   return hsv
 }
 
 module.exports = _rgbToHsv
+// 转换公式：https://www.rapidtables.org/zh-CN/convert/color/rgb-to-hsv.html
