@@ -8,10 +8,12 @@ class _Calendar extends _Solar {
 
   constructor({ date = new Date(), isLunar = true } = {}) {
     super(isLunar) //是否显示阴历
-    const d = date() // 日期
+    const d = date // 日期
     this.year = d.getFullYear()
     this.month = d.getMonth() + 1
     this.day = d.getDate()
+    // this.getSolarTerms(this.year)
+    this.isSolarLeapMonth(this.year)
   }
 
   getDate() {

@@ -4,7 +4,7 @@
  * @param {string} str 驼峰命名
  * @returns {string} 脊柱命名
  */
-function _toSpinalCase(str) {
+function _toSpinalCase(str = '') {
   if (!str || typeof str !== 'string') return str;
 
   const list = str.split('')

@@ -5,7 +5,6 @@ class _Solar extends _Lunar {
   constructor(isLunar = true) {
     super()
     this.isLunar = isLunar // 是否计算阴历
-    this.getSolarTerms()
   }
 
   /**
@@ -28,7 +27,7 @@ class _Solar extends _Lunar {
       year: sy, month: smm, day: sdd,
       value: `${sy}-${sm}-${sd}`,
       festival: [this.SOLAR_FESTIVAL[key]].filter(s => s),
-      solarTerms: [this.SOLAR_TERMS[key]].filter(s => s)
+      // solarTerms: [this.SOLAR_TERMS[key]].filter(s => s)
     }
 
     let date = { solar }
@@ -47,38 +46,38 @@ class _Solar extends _Lunar {
     }
   }
 
-  /**
-   * 获取节气对应表
-   * @param {number} sy 
-   */
-  getSolarTerms(sy) {
-    const seconds = 31556925974.7 //31556925974.7为地球公转周期，是毫秒
-    const baseYear = 1890 // 1890年为基准点
-    const baseDate = Date.UTC(1890, 0, 5, 16, 2, 31) // 1890年的正小寒点：01-05 16:02:31
+  // /**
+  //  * 获取节气对应表
+  //  * @param {number} sy 
+  //  */
+  // getSolarTerms(sy) {
+  //   const seconds = 31556925974.7 //31556925974.7为地球公转周期，是毫秒
+  //   const baseYear = 1890 // 1890年为基准点
+  //   const baseDate = Date.UTC(1890, 0, 5, 16, 2, 31) // 1890年的正小寒点：01-05 16:02:31
 
-    /**
-     * 计算 节气 日
-     * @param {number} y 阳历年份
-     * @param {number} i 0-23节气 分钟时间索引
-     * @returns {number} 日 
-     */
-    const getDate = (y, i) => {
-      let date = new Date((seconds * (y - baseYear) + this.SOLAR_TERMS_TIME[i] * 60000) + baseDate);
-      return date.getUTCDate()
-    }
+  //   /**
+  //    * 计算 节气 日
+  //    * @param {number} y 阳历年份
+  //    * @param {number} i 0-23节气 分钟时间索引
+  //    * @returns {number} 日 
+  //    */
+  //   const getDate = (y, i) => {
+  //     let date = new Date((seconds * (y - baseYear) + this.SOLAR_TERMS_TIME[i] * 60000) + baseDate);
+  //     return date.getUTCDate()
+  //   }
 
-    let terms = {}
-    let m = 0 // 阴阳历 月
-    let d = 0 // 阴阳历 日
+  //   let terms = {}
+  //   let m = 0 // 阴阳历 月
+  //   let d = 0 // 阴阳历 日
 
-    for (let i = 0; i < 24; i++) {
-      d = getDate(year, i);
-      if (i % 2 == 0) m++
-      terms[`${this.padStart(m)}${this.padStart(d)}`] = this.SOLAR_TERMS_CN[i]
-    }
+  //   for (let i = 0; i < 24; i++) {
+  //     d = getDate(sy, i);
+  //     if (i % 2 == 0) m++
+  //     terms[`${this.padStart(m)}${this.padStart(d)}`] = this.SOLAR_TERMS_CN[i]
+  //   }
 
-    this.SOLAR_TERMS = terms
-  }
+  //   this.SOLAR_TERMS = terms
+  // }
 }
 
 module.exports = _Solar

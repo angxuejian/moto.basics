@@ -170,7 +170,7 @@ class _Lunar extends _Config {
     return parseInt(m, 2)
   }
 
-  padStart = function (n, number = 2) {
+  padStart(n, number = 2) {
     n = n.toString()
     return n.padStart(number, 0)
   }
