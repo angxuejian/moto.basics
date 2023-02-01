@@ -44,7 +44,6 @@ export default {
     const subPages = ref([
       { name: '文档', url: '/' },
     ])
-
     const selectSubPageIndex = ref(0)
     const getSubPage = index => { selectSubPageIndex.value = index }
     const onCallbackSwitchChange = () => { store.dispatch('CHANGE_THEME') }

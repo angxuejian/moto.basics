@@ -10,13 +10,22 @@ npm install @angxuejian/lodash --save
 
 ## 使用
 
-在需要使用的 js文件中引用即可
+### js 使用
+在需要调用方法的 js文件中引入[jssdk文件](https://github.com/angxuejian/moto.basics/tree/main/package/lodash/umd/lodash.js)
+``` js
+import lodash from './umd/lodash.js' // 项目本地路径
+// or
+const lodash = require('./umd/lodash.js')
+// or
+<script src='./umd/lodash.js'></script>
+```
 
+### npm 使用
 全部引用
 ```js
-import _lodash from '@angxuejian/lodash'
+import lodash from '@angxuejian/lodash'
 // or
-const _lodash = require('@angxuejian/lodash')
+const lodash = require('@angxuejian/lodash')
 ```
 
 按需引用
