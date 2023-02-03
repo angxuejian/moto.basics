@@ -1,0 +1,32 @@
+{
+  "name": "@angxuejian/lodash",
+  "version": "1.0.5",
+  "description": "JavaScript 实用工具库",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config jest.config.js --detectOpenHandles --runInBand  --coverage=true",
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angxuejian/moto.basics/tree/main/package"
+  },
+  "keywords": [
+    "lodash",
+    "js",
+    "javascript",
+    "utils"
+  ],
+  "author": "angxuejian",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "jest": "^27.5.0",
+    "rollup": "^2.78.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
