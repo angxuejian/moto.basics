@@ -1,0 +1,29 @@
+name: publish-moto.basics
+
+# 执行action的条件
+# 当main分支 push事件触发时执行任务
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy: # job名称
+    runs-on: ubuntu-latest # 在GitHub托管的新虚拟机上执行(https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2 #从仓库拉出主分支
+
+      - name: Build
+        uses: actions/setup-node@v2 #设置node版本
+        with:
+          node-version: '10.16.3' # 设置指定node版本
+        run: npm install && npm run build
+
+      - name: Deploy Github Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3 # 使用第三方部署包(https://www.npmjs.com/package/@jamesives/github-pages-deploy-action)
+        with: 
+          # 1. 设置个人令牌token, 勾选 repo 权限, 生成token;
+          # 2. 目标仓库/secrets下新建 DEPLOY_ACCESS_TOKEN(与下方名称保持一致即可), 将第一步生成的token复制到 DEPLOY_ACCESS_TOKEN的value下;
+          ACCESS_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }} # github仓库/secrets 下设置的变量
+          BRANCH: main # 读取的分支
+          FOLDER: dist # npm run build打包后生成的静态文件位置
