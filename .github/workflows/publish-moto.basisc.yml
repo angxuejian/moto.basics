@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '10.16.3' # 设置指定node版本
 
-      - name: Init && Build
+      - name: Install && Build
         run: npm install && npm run build
 
       - name: Deploy Github Pages
@@ -26,3 +26,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }} # github仓库/secrets 下设置的变量
           BRANCH: main # 读取的分支
           FOLDER: dist # npm run build打包后生成的静态文件位置
+          TARGET-FOLDER: docs # 目标仓库下的指定文件夹
