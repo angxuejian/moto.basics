@@ -4,7 +4,7 @@ name: publish
 # 当main分支 push事件触发时执行任务
 on:
   push:
-    branches: [main]
+    branches: [publish]
 
 jobs:
   build-and-deploy: # job名称
