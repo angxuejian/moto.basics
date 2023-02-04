@@ -27,4 +27,4 @@ jobs:
           repository-name: angxuejian/angxuejian.github.io # 目标仓库
           branch: main # 读取的分支
           folder: dist # npm run build打包后生成的静态文件位置
-          target-folder: docs # 目标仓库下的指定文件夹
+          target-folder: moto.basics # 目标仓库下的指定文件夹
