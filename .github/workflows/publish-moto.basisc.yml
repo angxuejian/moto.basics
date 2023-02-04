@@ -23,7 +23,7 @@ jobs:
         with: 
           # 1. 设置个人令牌token, 勾选 repo 权限, 生成token;
           # 2. 目标仓库/secrets下新建 DEPLOY_ACCESS_TOKEN(与下方名称保持一致即可), 将第一步生成的token复制到 DEPLOY_ACCESS_TOKEN的value下;
-          ACCESS_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN_T }} # github仓库/secrets 下设置的变量
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # github仓库/secrets 下设置的变量
           REPOSITORY_NAME: angxuejian/angxuejian.github.io # 目标仓库
           BRANCH: main # 读取的分支
           FOLDER: dist # npm run build打包后生成的静态文件位置
