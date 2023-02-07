@@ -1,5 +1,7 @@
-const path = require('path');
+// const path = require('path');
 const setting = require('./src/setting')
+
+
 module.exports = {
   pages: {
     index: {
