@@ -26,7 +26,7 @@ module.exports = {
           type: 'javascript/auto',
         },
         {
-          test: setting.regMLoader,
+          test: /\.md$/,
           use: [
             { loader: 'vue-loader', options: { compilerOptions: { preserveWhitespace: false } } },
             { loader: '@angxuejian/md-loader' },
