@@ -4,7 +4,7 @@ name: publish
 # 当main分支 push事件触发时执行任务
 on:
   push:
-    branches: [publish]
+    branches: [main]
 
 jobs:
   build-and-deploy: # job名称
@@ -16,15 +16,15 @@ jobs:
           node-version: '10.16.3' # 设置指定node版本
 
       - name: Install && Build
-        run: npm install && npm run build
+        run: npm install && npm run serve
 
-      - name: Deploy Github Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4 # 使用第三方部署包(https://github.com/JamesIves/github-pages-deploy-action)
-        with: 
-          # 1. 设置个人令牌token, 勾选 repo 权限, 生成token;
-          # 2. 目标仓库/secrets下新建 DEPLOY_TOKEN(与下方名称保持一致即可), 将第一步生成的token复制到 DEPLOY_TOKEN的value下;
-          token: ${{ secrets.DEPLOY_TOKEN }} # 当前仓库/secrets 下设置的变量
-          repository-name: angxuejian/angxuejian.github.io # 目标仓库
-          branch: main # 目标仓库下的指定分支
-          folder: dist # npm run build打包后生成的静态文件位置
-          target-folder: moto.basics #目标仓库下的指定分支/文件夹
+#       - name: Deploy Github Pages
+#         uses: JamesIves/github-pages-deploy-action@releases/v4 # 使用第三方部署包(https://github.com/JamesIves/github-pages-deploy-action)
+#         with: 
+#           # 1. 设置个人令牌token, 勾选 repo 权限, 生成token;
+#           # 2. 目标仓库/secrets下新建 DEPLOY_TOKEN(与下方名称保持一致即可), 将第一步生成的token复制到 DEPLOY_TOKEN的value下;
+#           token: ${{ secrets.DEPLOY_TOKEN }} # 当前仓库/secrets 下设置的变量
+#           repository-name: angxuejian/angxuejian.github.io # 目标仓库
+#           branch: main # 目标仓库下的指定分支
+#           folder: dist # npm run build打包后生成的静态文件位置
+#           target-folder: moto.basics #目标仓库下的指定分支/文件夹
