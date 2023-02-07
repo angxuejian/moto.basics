@@ -9,7 +9,7 @@ const formatRouter = () => {
     return {
       path: `/${setting.path}/${url}`,
       name: item.name[0].toUpperCase() + item.name.substr(1),
-      component: () => import('@/views/examples/docs/' + (url) + '.md'),
+      component: () => import('@/views/examples/docs/css.md'),
     }
   }
   Navbar.forEach(item => {
