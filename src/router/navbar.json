@@ -15,7 +15,7 @@
       { "title": "_getDepthValue", "name": "getDepthValue", "path": "lodash/getDepthValue" },
       { "title": "_getParams", "name": "getParams", "path": "lodash/getParams" },
       { "title": "_drawRoundRect", "name": "drawRoundRect", "path": "lodash/drawRoundRect" },
-      { "title": "_ImageMode", "name": "ImageMode", "path": "lodash/ImageMode" },
+      { "title": "_ImageMode", "name": "ImageMode", "path": "lodash/imageMode" },
       { "title": "_debounce", "name": "debounce", "path": "lodash/debounce" },
       { "title": "_throttle", "name": "throttle", "path": "lodash/throttle" },
       { "title": "_hexToRgb", "name": "hexToRgb", "path": "lodash/hexToRgb" },
