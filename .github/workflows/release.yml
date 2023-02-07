@@ -1,4 +1,4 @@
-name: publish
+name: release moto.basics
 
 # 执行action的条件
 # 当main分支 push事件触发时执行任务
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-and-deploy: # job名称
+  release-html: # job名称
     runs-on: ubuntu-latest # 在GitHub托管的新虚拟机上执行(https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on)
     steps:
       - uses: actions/checkout@v3 #从仓库拉出主分支
@@ -18,7 +18,7 @@ jobs:
       - name: Run project build 
         run: npm install && npm run build
 
-      - name: Deploy Github Pages
+      - name: Run deploy github pages
         uses: JamesIves/github-pages-deploy-action@releases/v4 # 使用第三方部署包(https://github.com/JamesIves/github-pages-deploy-action)
         with: 
           # 1. 设置个人令牌token, 勾选 repo 权限, 生成token;
@@ -27,4 +27,4 @@ jobs:
           repository-name: angxuejian/angxuejian.github.io # 目标仓库
           branch: main # 目标仓库下的指定分支
           folder: dist # npm run build打包后生成的静态文件位置
-          target-folder: moto.basics.test #目标仓库下的指定分支/文件夹
+          target-folder: moto.basics #目标仓库下的指定分支/文件夹
