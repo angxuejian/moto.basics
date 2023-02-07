@@ -24,13 +24,19 @@ const formatRouter = () => {
   return router
 }
 
-const children = formatRouter()
+// const children = formatRouter()
 const routes = [
   {
     path: '/',
-    redirect: children[0].path,
+    redirect: 'docs/css',
     component: () => import('@/layout'),
-    children: children,
+    children: [
+      {
+        path: 'docs/css',
+        name: 'Css',
+        component: () => import('@/views/examples/docs/css.md')
+      }
+    ],
   },
 ];
 
