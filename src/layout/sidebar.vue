@@ -8,8 +8,8 @@
           <template v-if="item.children">
             <p class="sidebar-item__title">{{ item.title }}</p>
 
-            <template v-for="s in item.children">
-              <router-href :key="s.name" :to="pathUrl(s)" :item="s">
+            <template v-for="(s, i) in item.children" :key="i">
+              <router-href :to="pathUrl(s)" :item="s">
                 <span :class="['sidebar-item__link', { 'sidebar-item__selected': sidebarIndex === pathUrl(s) }]">{{ s.title }}</span>
               </router-href>
             </template>
