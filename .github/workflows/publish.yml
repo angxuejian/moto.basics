@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: '14' # 设置指定node版本
 
-      - name: Install && Build
-        run: npm install && cd node_modules && cd @angxuejian && ls -a
+      - name: Run build
+        run: npm install && npm run build
 
 #       - name: Deploy Github Pages
 #         uses: JamesIves/github-pages-deploy-action@releases/v4 # 使用第三方部署包(https://github.com/JamesIves/github-pages-deploy-action)
